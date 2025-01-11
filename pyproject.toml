@@ -23,10 +23,12 @@ pydantic = "^2.10.1"
 pydantic-settings = "^2.6.1"
 mlflow = "^2.18.0"
 flatdict = "^4.0.1"
+trafilatura = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.8.0"
 mypy = "^1.13.0"
+pytest = "^8.3.4"
 
 [build-system]
 requires = ["poetry-core"]
@@ -38,4 +40,12 @@ ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = "sklearn.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "nltk.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "toolz.*"
 ignore_missing_imports = true
